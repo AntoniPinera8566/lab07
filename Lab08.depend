@@ -1,0 +1,34 @@
+# depslib dependency file v1.0
+1776039794 source:c:\users\apsoc\onedrive\desktop\lab008\lab08\lab7.c
+	"header.h"
+
+1776115402 c:\users\apsoc\onedrive\desktop\lab008\lab08\header.h
+	<string.h>
+	<assert.h>
+	<stdio.h>
+	<stdlib.h>
+	<memory.h>
+	<sys/param.h>
+	<stdbool.h>
+	<ctype.h>
+	<stdint.h>
+
+1776115497 source:c:\users\apsoc\onedrive\desktop\lab008\lab08\main.c
+	"header.h"
+
+1776039794 source:c:\users\apsoc\onedrive\desktop\lab008\lab08\memory.c
+	"header.h"
+
+1776039794 source:c:\users\apsoc\onedrive\desktop\lab008\lab08\parser.c
+	"header.h"
+	"parser.h"
+
+1776039794 c:\users\apsoc\onedrive\desktop\lab008\lab08\parser.h
+	<string.h>
+
+1776115947 source:c:\users\apsoc\onedrive\desktop\lab008\lab08\lab8_9.c
+	"header.h"
+	"lab8header.h"
+
+1776115798 c:\users\apsoc\onedrive\desktop\lab008\lab08\lab8header.h
+

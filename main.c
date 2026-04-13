@@ -9,13 +9,13 @@
 
 // Actual definitions of the global variables for the linker
 MIPS_Instruction Instruction_storage[MAX_SIZE];
-int regFile[N_REG];
+int regFile[32];
 char Data_storage[MAX_SIZE];
 unsigned int totalDataByte;
 labelType labelTab[MAX_LABEL];
 
-int main (int argc, char *argv[]) {        
-	    char *mem = NULL;  
+int main (int argc, char *argv[]) {
+	    char *mem = NULL;
         FILE *fp = NULL;
         int stopChar;
 
@@ -23,22 +23,22 @@ int main (int argc, char *argv[]) {
             puts("\nIncorrect number of arguments.");
             puts("Usage: ProgramName.exe MIPSCode.asm \n");
             stopChar = getchar();
-            return EXIT_FAILURE;  
+            return EXIT_FAILURE;
         }
-        if ((fp = fopen(argv[1], "r"))== NULL) {  
+        if ((fp = fopen(argv[1], "r"))== NULL) {
                 printf("Input file could not be opened.");
                 stopChar = getchar();
-                return EXIT_FAILURE;  
+                return EXIT_FAILURE;
         }
-        parse_MIPS(fp);  
-		
-        mem = init_memory();  
+        parse_MIPS(fp);
+
+        mem = init_memory();
         stopChar = getchar();
-        
+
         puts("----Lab 7 Code Starts to Parse the ASM Code----");
         loadCodeToMem(mem);
         stopChar = getchar();
-
-        free_memory(mem);  
+        CPU (mem);
+        free_memory(mem);
         return 0;
 }

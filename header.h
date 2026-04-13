@@ -20,7 +20,7 @@
 #define MIN_DUMP_SIZE  256   // minimum size of the dump size is set to 256 bytes.
 #define DUMP_LINE 16    // the size of the memory to be dumped on each row.
 
-#define N_REG 34
+#define N_REG 32
 #define MAX_SIZE 2*1024  // set storage of data and code as 2k instructions/byte each.
 #define MAX_LABEL 256
 
@@ -49,13 +49,13 @@ typedef struct MIPS_Instruction
         union{
             int immediate;                  ///< immediate value or address given directly.
             int address;                    ///< address that is translated from a label
-        }; 
+        };
 
         unsigned int machineCode;  // returned machineCode
 }MIPS_Instruction;
 
 // Added extern to prevent multiple definition errors across files
-extern MIPS_Instruction Instruction_storage[MAX_SIZE]; 
+extern MIPS_Instruction Instruction_storage[MAX_SIZE];
 extern int regFile[N_REG];
 extern char Data_storage[MAX_SIZE];
 extern unsigned int totalDataByte;
@@ -84,5 +84,5 @@ void write_dword(const char *base_address, const int offset, const unsigned int 
 unsigned char read_byte(const char *base_address, int offset);
 unsigned int read_dword(const char *base_address, int offset);
 void memory_dump(const char *base_address, const int offset, unsigned int dumpsize);
-void CPU(char *mem);   
+void CPU(char *mem);
 #endif /* HEADER_H */
