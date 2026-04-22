@@ -35,7 +35,7 @@ int main (int argc, char *argv[]) {
         mem = init_memory();
         stopChar = getchar();
 
-        puts("----Lab 8 Code Starts to Parse the ASM Code----");
+        puts("----Lab 9 Code Starts to Parse the ASM Code----");
         loadCodeToMem(mem);
         stopChar = getchar();
         CPU (mem);
